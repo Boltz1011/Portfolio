@@ -12,11 +12,31 @@
 // Slide in pages
 
 const logoLink = document.querySelector(".logo-link");
+const aboLink = document.querySelector(".abo-link");
 const expLink = document.querySelector(".exp-link");
 const eduLink = document.querySelector(".edu-link");
 const proLink = document.querySelector(".pro-link");
 const conLink = document.querySelector(".con-link");
+const dowLink = document.querySelector(".dow-link");
 const secPage = document.querySelector(".secondary");
+
+function replaceClasses(newClass) {
+  const classNames = [
+    "edu-open",
+    "pro-open",
+    "con-open",
+    "dow-open",
+    "exp-open",
+    "abo-open",
+  ];
+  classNames.forEach((value, index) => {
+    if (secPage.classList.contains(value)) {
+      secPage.classList.replace(value, newClass);
+    } else {
+      secPage.classList.add(newClass);
+    }
+  });
+}
 
 logoLink.addEventListener("click", function () {
   if (secPage.classList.contains("exp-open")) {
@@ -27,55 +47,90 @@ logoLink.addEventListener("click", function () {
     secPage.classList.remove("pro-open");
   } else if (secPage.classList.contains("con-open")) {
     secPage.classList.remove("con-open");
+  } else if (secPage.classList.contains("dow-open")) {
+    secPage.classList.remove("dow-open");
+  } else if (secPage.classList.contains("abo-open")) {
+    secPage.classList.remove("abo-open");
   }
 });
 
+aboLink.addEventListener("click", function () {
+  replaceClasses("abo-open");
+});
+
 expLink.addEventListener("click", function () {
-  if (secPage.classList.contains("edu-open")) {
+  /*if (secPage.classList.contains("edu-open")) {
     secPage.classList.replace("edu-open", "exp-open");
   } else if (secPage.classList.contains("pro-open")) {
     secPage.classList.replace("pro-open", "exp-open");
   } else if (secPage.classList.contains("con-open")) {
     secPage.classList.replace("con-open", "exp-open");
+  } else if (secPage.classList.contains("dow-open")) {
+    secPage.classList.replace("dow-open", "exp-open");
   } else {
     secPage.classList.add("exp-open");
-  }
+  } */
+  replaceClasses("exp-open");
 });
 
 eduLink.addEventListener("click", function () {
-  if (secPage.classList.contains("exp-open")) {
-    secPage.classList.replace("exp-open", "edu-open");
-  } else if (secPage.classList.contains("pro-open")) {
-    secPage.classList.replace("pro-open", "edu-open");
-  } else if (secPage.classList.contains("con-open")) {
-    secPage.classList.replace("con-open", "edu-open");
-  } else {
-    secPage.classList.add("edu-open");
-  }
+  // if (secPage.classList.contains("exp-open")) {
+  //   secPage.classList.replace("exp-open", "edu-open");
+  // } else if (secPage.classList.contains("pro-open")) {
+  //   secPage.classList.replace("pro-open", "edu-open");
+  // } else if (secPage.classList.contains("con-open")) {
+  //   secPage.classList.replace("con-open", "edu-open");
+  // } else if (secPage.classList.contains("dow-open")) {
+  //   secPage.classList.replace("dow-open", "edu-open");
+  // } else {
+  //   secPage.classList.add("edu-open");
+  // }
+  replaceClasses("edu-open");
 });
 
 proLink.addEventListener("click", function () {
-  if (secPage.classList.contains("exp-open")) {
-    secPage.classList.replace("exp-open", "pro-open");
-  } else if (secPage.classList.contains("edu-open")) {
-    secPage.classList.replace("edu-open", "pro-open");
-  } else if (secPage.classList.contains("con-open")) {
-    secPage.classList.replace("con-open", "pro-open");
-  } else {
-    secPage.classList.add("pro-open");
-  }
+  // if (secPage.classList.contains("exp-open")) {
+  //   secPage.classList.replace("exp-open", "pro-open");
+  // } else if (secPage.classList.contains("edu-open")) {
+  //   secPage.classList.replace("edu-open", "pro-open");
+  // } else if (secPage.classList.contains("con-open")) {
+  //   secPage.classList.replace("con-open", "pro-open");
+  // } else if (secPage.classList.contains("dow-open")) {
+  //   secPage.classList.replace("dow-open", "pro-open");
+  // } else {
+  //   secPage.classList.add("pro-open");
+  // }
+  replaceClasses("pro-open");
+});
+
+dowLink.addEventListener("click", function () {
+  // if (secPage.classList.contains("exp-open")) {
+  //   secPage.classList.replace("exp-open", "dow-open");
+  // } else if (secPage.classList.contains("edu-open")) {
+  //   secPage.classList.replace("edu-open", "dow-open");
+  // } else if (secPage.classList.contains("con-open")) {
+  //   secPage.classList.replace("con-open", "dow-open");
+  // } else if (secPage.classList.contains("pro-open")) {
+  //   secPage.classList.replace("pro-open", "dow-open");
+  // } else {
+  //   secPage.classList.add("dow-open");
+  // }
+  replaceClasses("dow-open");
 });
 
 conLink.addEventListener("click", function () {
-  if (secPage.classList.contains("exp-open")) {
-    secPage.classList.replace("exp-open", "con-open");
-  } else if (secPage.classList.contains("edu-open")) {
-    secPage.classList.replace("edu-open", "con-open");
-  } else if (secPage.classList.contains("pro-open")) {
-    secPage.classList.replace("pro-open", "con-open");
-  } else {
-    secPage.classList.add("con-open");
-  }
+  // if (secPage.classList.contains("exp-open")) {
+  //   secPage.classList.replace("exp-open", "con-open");
+  // } else if (secPage.classList.contains("edu-open")) {
+  //   secPage.classList.replace("edu-open", "con-open");
+  // } else if (secPage.classList.contains("pro-open")) {
+  //   secPage.classList.replace("pro-open", "con-open");
+  // } else if (secPage.classList.contains("dow-open")) {
+  //   secPage.classList.replace("dow-open", "con-open");
+  // } else {
+  //   secPage.classList.add("con-open");
+  // }
+  replaceClasses("con-open");
 });
 
 ///////////////////////////////////////////////////////////
@@ -92,6 +147,27 @@ const expList = document.querySelectorAll(".list").forEach((list) => {
 });
 
 ///////////////////////////////////////////////////////////
+//Experience popups
+
+// function showPopup() {
+//   var popup = document.getElementByClassName("popuptext");
+//   popup.classList.toggle("show");
+// }
+
+// const detailHide = document.querySelector(".hide");
+const expList2 = document.querySelectorAll(".list1").forEach((list1) => {
+  list1.addEventListener("mouseenter", (event) => {
+    event.target.nextElementSibling?.classList.add("show");
+    event.target.firstElementChild?.classList.add("show");
+  });
+  list1.addEventListener("mouseout", (event) => {
+    event.target.nextElementSibling?.classList.remove("show");
+    event.target.firstElementChild?.classList.remove("show");
+  });
+});
+
+///////////////////////////////////////////////////////////
+
 // Smooth scrolling animation
 
 // const allLinks = document.querySelectorAll("a:link");
@@ -161,7 +237,7 @@ function checkFlexGap() {
   document.body.appendChild(flex);
   var isSupported = flex.scrollHeight === 1;
   flex.parentNode.removeChild(flex);
-  console.log(isSupported);
+  // console.log(isSupported);
 
   if (!isSupported) document.body.classList.add("no-flexbox-gap");
 }
