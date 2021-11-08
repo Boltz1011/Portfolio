@@ -215,7 +215,9 @@ main {
 .contact,
 .projects,
 .education,
-.experience {
+.experience,
+.downloads,
+.about {
   background-color: rgba(185, 198, 174, 0.144);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(10px);
@@ -238,22 +240,26 @@ main {
 .con-open .contact,
 .pro-open .projects,
 .edu-open .education,
-.exp-open .experience {
+.exp-open .experience,
+.dow-open .downloads,
+.abo-open .about {
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
   transform: translateX(0);
 }
 
-.con-grid,
+/* .con-grid,
 .pro-grid,
 .edu-grid,
-.exp-grid {
+.exp-grid,
+.dow-grid, */
+.grid {
   display: grid;
   grid-template-columns: repeat(1fr);
   width: 120rem;
   background-image: url("../img/codeblur.jpg");
-  padding: 15rem 10rem 15rem 15rem;
+  padding: 15rem 8rem 15rem 12rem;
   margin-left: 10rem;
   border-radius: 2rem;
   position: relative;
@@ -275,10 +281,12 @@ main {
   z-index: 1;
 } */
 
-.con-col,
+/* .con-col,
 .pro-col,
 .edu-col,
-.exp-col {
+.exp-col,
+.dow-col,  */
+.col {
   display: block;
   font-size: 2rem;
   color: var(--link-hover);
@@ -286,10 +294,12 @@ main {
   z-index: 2;
 }
 
-.con-head,
+/* .con-head,
 .pro-head,
 .edu-head,
-.exp-head {
+.exp-head,
+.dow-head,  */
+.head {
   color: #9ac577;
   font-size: 2.8rem;
   margin-bottom: 2rem;
@@ -308,6 +318,37 @@ main {
   color: #9ac577;
 }
 
+/* ----------------ABOUT ME SECTION------------------------------------- */
+
+.abo-line {
+  font-size: 1.8rem;
+}
+
+.abo-subgrid {
+  display: grid;
+  grid-template-columns: 1fr 0.25fr;
+  column-gap: 10rem;
+}
+
+.abo-list {
+  list-style: none;
+}
+
+.abo-list::before {
+  content: "";
+  display: block;
+  border-radius: 2rem;
+  position: absolute;
+  /* top 50%, left 37.5%, width and padding bottom 75% */
+  top: 50%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+  width: 20%;
+  padding-bottom: 45%;
+  background-color: rgba(71, 64, 86, 0.801);
+  z-index: -1;
+}
+
 /* ----------------EXPERIENCE SECTION------------------------------------- */
 
 /* .exp-grid,
@@ -318,11 +359,17 @@ main {
 .list {
   list-style: none;
   display: inline-block;
-  color: var(--link-primary);
+  color: var(--link-hover);
+  padding: 0;
+}
+
+.list:hover {
+  color: #9ac577;
 }
 
 .exp-head,
-.edu-head {
+.edu-head,
+.dow-head {
   display: inline-block;
 }
 
@@ -335,6 +382,96 @@ main {
   display: inline-block;
   font-weight: 700;
   font-size: 2.8rem;
+}
+
+.exp-subhead {
+  padding: 0;
+  font-size: 2.4rem;
+}
+
+.exp-subhead2 {
+  display: flex;
+  padding-top: 0;
+  padding-bottom: 1.4rem;
+}
+
+.exp-subhead2 div {
+  margin-left: auto;
+}
+
+/* ---------------------------------------Popups for experience----------- */
+
+.list1 {
+  position: relative;
+  cursor: pointer;
+}
+
+.list1:hover {
+  color: #9ac577;
+}
+
+.popuptext {
+  visibility: hidden;
+  width: 60rem;
+  height: 38rem;
+  background-color: var(--bg-primary);
+  color: var(--link-primary);
+  /* border: 1px solid var(--link-hover); */
+  border-radius: 2rem;
+  padding: 2rem 4rem;
+  position: absolute;
+  z-index: 9999;
+  bottom: 22%;
+  left: 42%;
+}
+
+.hovlist {
+  font-size: 1.6rem;
+  color: var(--link-hover);
+  list-style: none;
+  display: grid;
+  grid-template-columns: 0.05fr 1fr;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.exp-grid {
+  grid-template-columns: 0.62fr 1fr;
+}
+
+.arrow {
+  margin-left: auto;
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0;
+  align-self: center;
+  visibility: hidden;
+}
+
+.list1 {
+  display: flex;
+}
+
+.show {
+  visibility: visible;
+  -webkit-animation: fadeIn 0.5s;
+  animation: fadeIn 0.5s;
 }
 
 /* ----------------EDUCATION SECTION------------------------------------- */
@@ -358,3 +495,5 @@ main {
   width: 2.4rem;
   height: 2.4rem;
 }
+
+/* ---------------- SECTION------------------------------------- */
