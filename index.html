@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
     <script defer src="js/script.js"></script>
     <script
       defer
@@ -26,7 +27,7 @@
             <span class="nav-text logo-text">.eRhinebolt</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="nav-icon"
+              class="nav-icon hide-icon"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -36,6 +37,20 @@
                 stroke-linejoin="round"
                 stroke-width="2"
                 d="M13 5l7 7-7 7M5 5l7 7-7 7"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="nav-icon show-icon"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
               />
             </svg>
           </button>
@@ -76,20 +91,6 @@
                 d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
               />
             </svg>
-            <!-- <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="nav-icon"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              />
-            </svg> -->
           </button>
         </li>
         <li class="nav-item">
@@ -196,7 +197,7 @@
             <div class="abo-col col">
               <div class="abo-subgrid">
                 <h3 class="abo-head head">.aboutMe</h3>
-                <h3 class="abo-head head">.skills</h3>
+                <h3 class="abo-head head skill-head">.skills</h3>
                 <p class="abo-line line">
                   I'm an analytical problem solver that is passionate about IT
                   and coding. Currently I'm attending a bootcamp, studying
@@ -224,6 +225,7 @@
             <div class="exp-col col">
               <h3 class="exp-head head">.experience</h3>
               <p class="hover">:hover</p>
+              <p class="click">.onclick</p>
               <ul class="exp-line line">
                 <li class="list1">
                   Class A Truck Driver<ion-icon
@@ -232,7 +234,10 @@
                   ></ion-icon>
                 </li>
                 <ul class="popuptext">
-                  <h4 class="exp-subhead">Hawaii Logistic Services</h4>
+                  <h4 class="exp-subhead">
+                    <span>Class A Truck Driver </span>
+                    <p>Hawaii Logistic Services</p>
+                  </h4>
                   <h5 class="exp-subhead2">
                     Kapolei, HI
                     <div>06/19-07/21</div>
@@ -261,7 +266,10 @@
                   ></ion-icon>
                 </li>
                 <ul class="popuptext">
-                  <h4 class="exp-subhead">Stingray Pressure Pumping</h4>
+                  <h4 class="exp-subhead">
+                    <span>Equipment Operator</span>
+                    <p>Stingray Pressure Pumping</p>
+                  </h4>
                   <h5 class="exp-subhead2">
                     Belmont, OH
                     <div>03/18-05/19</div>
@@ -297,7 +305,10 @@
                   ></ion-icon>
                 </li>
                 <ul class="popuptext">
-                  <h4 class="exp-subhead">GKN Sinter Metals</h4>
+                  <h4 class="exp-subhead">
+                    <span>Line Leader/Die Setter</span>
+                    <p>GKN Sinter Metals</p>
+                  </h4>
                   <h5 class="exp-subhead2">
                     Emporium, PA
                     <div>09/15-02/18</div>
@@ -334,7 +345,10 @@
                   ></ion-icon>
                 </li>
                 <ul class="popuptext">
-                  <h4 class="exp-subhead">Hoffmans Sports and Turf</h4>
+                  <h4 class="exp-subhead">
+                    <span>Parts Manager</span>
+                    <p>Hoffmans Sports and Turf</p>
+                  </h4>
                   <h5 class="exp-subhead2">
                     St. Marys, PA
                     <div>03/13-07/15</div>
@@ -372,7 +386,10 @@
                   ></ion-icon>
                 </li>
                 <ul class="popuptext">
-                  <h4 class="exp-subhead">Universal Well Services</h4>
+                  <h4 class="exp-subhead">
+                    <span>Equipment Operator</span>
+                    <p>Universal Well Services</p>
+                  </h4>
                   <h5 class="exp-subhead2">
                     Bradford, PA
                     <div>01/12-02/13</div>
@@ -408,7 +425,10 @@
                   ></ion-icon>
                 </li>
                 <ul class="popuptext">
-                  <h4 class="exp-subhead">Hoffmans Sports and Turf</h4>
+                  <h4 class="exp-subhead">
+                    <span>Parts Manager</span>
+                    <p>Hoffmans Sports and Turf</p>
+                  </h4>
                   <h5 class="exp-subhead2">
                     St. Marys, PA
                     <div>07/09-12/11</div>
@@ -446,7 +466,10 @@
                   ></ion-icon>
                 </li>
                 <ul class="popuptext">
-                  <h4 class="exp-subhead">Today's Office Professionals</h4>
+                  <h4 class="exp-subhead">
+                    <span>Order Entry Clerk</span>
+                    <p>Today's Office Professionals</p>
+                  </h4>
                   <h5 class="exp-subhead2">
                     Pittsburgh, PA
                     <div>11/07-07/09</div>
@@ -475,7 +498,10 @@
                   ></ion-icon>
                 </li>
                 <ul class="popuptext">
-                  <h4 class="exp-subhead">GKN Sinter Metals</h4>
+                  <h4 class="exp-subhead">
+                    <span>Assistant Shipping Supervisor</span>
+                    <p>GKN Sinter Metals</p>
+                  </h4>
                   <h5 class="exp-subhead2">
                     Emporium, PA
                     <div>05/06-11/07</div>
@@ -509,26 +535,74 @@
             <div class="edu-col col">
               <h3 class="edu-head head">.education</h3>
               <p class="hover">:hover</p>
+              <p class="click">.onclick</p>
               <ul class="edu-line line">
-                <li class="list">Attending Service Now/ITIL bootcamp</li>
-                <span class="hide"
-                  >&mdash; New Apprenticeship &mdash; 10/21-current</span
-                ><br />
-                <li class="list">
-                  Build Responsive Real-World Websites with HTML and CSS
-                  Certificate
+                <li class="list1">
+                  New Apprenticeship<ion-icon
+                    name="chevron-back-outline"
+                    class="arrow"
+                  ></ion-icon>
                 </li>
-                <span class="hide">&mdash; Udemy &mdash; 10/21</span
-                ><br />
-                <li class="list">College Credits in Information Technology</li>
-                <span class="hide"
-                  >&mdash; Pennsylvaina College of Technology &mdash;
-                  08/05-06/06</span
-                ><br />
-                <li class="list">High School Diploma</li>
-                <span class="hide"
-                  >&mdash; Cameron County High School &mdash; 06/05</span
-                ><br />
+                <div class="popuptext-edu">
+                  <h4 class="edu-subhead">
+                    <span>New Apprenticeship</span>
+                    <p>ITIL, ServiceNow, JavaScript, Agile - Bootcamp</p>
+                  </h4>
+                  <h5 class="edu-subhead2">
+                    Raleigh, NC
+                    <div>10/21-current</div>
+                  </h5>
+                </div>
+                <li class="list1">
+                  Udemy<ion-icon
+                    name="chevron-back-outline"
+                    class="arrow"
+                  ></ion-icon>
+                </li>
+                <div class="popuptext-edu">
+                  <h4 class="edu-subhead">
+                    <span>Udemy</span>
+                    <p>HTML and CSS course Certificate</p>
+                  </h4>
+                  <h5 class="edu-subhead2">
+                    Raleigh, NC
+                    <div>10/21</div>
+                  </h5>
+                </div>
+
+                <li class="list1">
+                  Pennsylvania College of Technology<ion-icon
+                    name="chevron-back-outline"
+                    class="arrow"
+                  ></ion-icon>
+                </li>
+                <div class="popuptext-edu">
+                  <h4 class="edu-subhead">
+                    <span>Pennsylvania College of Technology</span>
+                    <p>College Credits in Information Technology</p>
+                  </h4>
+                  <h5 class="edu-subhead2">
+                    Williamsport, PA
+                    <div>08/05-06/06</div>
+                  </h5>
+                </div>
+
+                <li class="list1">
+                  Cameron County High School<ion-icon
+                    name="chevron-back-outline"
+                    class="arrow"
+                  ></ion-icon>
+                </li>
+                <div class="popuptext-edu">
+                  <h4 class="edu-subhead">
+                    <span>Cameron County High School</span>
+                    <p>High School Diploma</p>
+                  </h4>
+                  <h5 class="edu-subhead2">
+                    Emporium, PA
+                    <div>06/05</div>
+                  </h5>
+                </div>
               </ul>
             </div>
           </div>
@@ -538,7 +612,7 @@
             <div class="pro-col col">
               <h3 class="pro-head head">.projects</h3>
 
-              <a class="pro-use" href="https://omnifood-eric.netlify.app/"
+              <a class="use" href="https://omnifood-eric.netlify.app/"
                 >Omnifood Webpage</a
               >
               <p class="pro-line line">
@@ -552,27 +626,31 @@
           <div class="dow-grid grid">
             <div class="dow-col col">
               <h3 class="dow-head head">.downloads</h3>
-              <!-- <p class="hover">:hover</p> -->
               <ul class="dow-line line">
-                <!-- <li class="list">Attending Service Now/ITIL bootcamp</li>
-                <span class="hide"
-                  >&mdash; New Apprenticeship &mdash; 10/21-current</span
-                ><br />
-                <li class="list">
-                  Build Responsive Real-World Websites with HTML and CSS
-                  Certificate
+                <li class="dow-list">
+                  <a
+                    class="use"
+                    href="./files/Infosys-resume.pdf"
+                    download="Eric-Rhinebolt-Resume"
+                    >Resume</a
+                  >
                 </li>
-                <span class="hide">&mdash; Udemy &mdash; 10/21</span
-                ><br />
-                <li class="list">College Credits in Information Technology</li>
-                <span class="hide"
-                  >&mdash; Pennsylvaina College of Technology &mdash;
-                  08/05-06/06</span
-                ><br />
-                <li class="list">High School Diploma</li>
-                <span class="hide"
-                  >&mdash; Cameron County High School &mdash; 06/05</span
-                ><br /> -->
+                <li class="dow-list">
+                  <a
+                    class="use"
+                    href="./files/Infosys-cover-letter.pdf"
+                    download="Eric-Rhinebolt-Cover-Letter"
+                    >Cover Letter</a
+                  >
+                </li>
+                <li class="dow-list">
+                  <a
+                    class="use"
+                    href="./files/Udemy-html-css-certificate.jpg"
+                    download="Eric-Rhinebolt-Udemy-Certificate"
+                    >Udemy HTML and CSS Certificate</a
+                  >
+                </li>
               </ul>
             </div>
           </div>

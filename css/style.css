@@ -5,6 +5,7 @@
   --link-hover: #8a95a5;
   --bg-primary: #474056;
   --bg-secondary: #3f3e46;
+  --head-primary: #9ac577;
 }
 
 * {
@@ -49,12 +50,16 @@ body {
   margin-right: auto;
 }
 
-.logo svg {
+.hide-icon {
   transform: rotate(0deg);
   transition: transform 500ms;
 }
 
-.nav-bar:hover .logo svg {
+.show-icon {
+  display: none;
+}
+
+.nav-bar:hover .hide-icon {
   transform: rotate(-180deg);
 }
 
@@ -98,8 +103,6 @@ body {
 
 .nav-text {
   display: none;
-  /* opacity: 0;
-  visibility: none; */
   margin-left: 1.6rem;
   font-size: 2rem;
   transition: all 0.3s;
@@ -120,9 +123,6 @@ body {
 
 .nav-bar:hover .nav-text {
   display: block;
-
-  /* visibility: visible;
-  opacity: 1; */
 }
 
 .nav-link:hover .nav-icon,
@@ -150,7 +150,7 @@ main {
 .hero-grid {
   display: grid;
   grid-template-columns: 0.13fr 1.2fr 1fr;
-  /* gap: 20rem; */
+  grid-template-rows: repeat(2 1fr);
   font-size: 2rem;
   height: 75vh;
 }
@@ -245,15 +245,11 @@ main {
 .abo-open .about {
   opacity: 1;
   pointer-events: auto;
+
   visibility: visible;
   transform: translateX(0);
 }
 
-/* .con-grid,
-.pro-grid,
-.edu-grid,
-.exp-grid,
-.dow-grid, */
 .grid {
   display: grid;
   grid-template-columns: repeat(1fr);
@@ -281,11 +277,6 @@ main {
   z-index: 1;
 } */
 
-/* .con-col,
-.pro-col,
-.edu-col,
-.exp-col,
-.dow-col,  */
 .col {
   display: block;
   font-size: 2rem;
@@ -294,11 +285,6 @@ main {
   z-index: 2;
 }
 
-/* .con-head,
-.pro-head,
-.edu-head,
-.exp-head,
-.dow-head,  */
 .head {
   color: #9ac577;
   font-size: 2.8rem;
@@ -306,15 +292,15 @@ main {
 }
 
 .con-use,
-.pro-use {
+.use {
   color: var(--link-primary);
   text-decoration: none;
 }
 
 .con-use:hover,
 .con-use:active,
-.pro-use:hover,
-.pro-use:active {
+.use:hover,
+.use:active {
   color: #9ac577;
 }
 
@@ -322,6 +308,7 @@ main {
 
 .abo-line {
   font-size: 1.8rem;
+  line-height: 2.5rem;
 }
 
 .abo-subgrid {
@@ -339,7 +326,6 @@ main {
   display: block;
   border-radius: 2rem;
   position: absolute;
-  /* top 50%, left 37.5%, width and padding bottom 75% */
   top: 50%;
   left: 85%;
   transform: translate(-50%, -50%);
@@ -350,11 +336,6 @@ main {
 }
 
 /* ----------------EXPERIENCE SECTION------------------------------------- */
-
-/* .exp-grid,
-.edu-grid {
-  padding-right: 15rem;
-} */
 
 .list {
   list-style: none;
@@ -380,6 +361,12 @@ main {
 
 .hover {
   display: inline-block;
+  font-weight: 700;
+  font-size: 2.8rem;
+}
+
+.click {
+  display: none;
   font-weight: 700;
   font-size: 2.8rem;
 }
@@ -410,13 +397,17 @@ main {
   color: #9ac577;
 }
 
+.exp-subhead span,
+.edu-subhead span {
+  display: none;
+}
+
 .popuptext {
   visibility: hidden;
   width: 60rem;
   height: 38rem;
   background-color: var(--bg-primary);
   color: var(--link-primary);
-  /* border: 1px solid var(--link-hover); */
   border-radius: 2rem;
   padding: 2rem 4rem;
   position: absolute;
@@ -431,6 +422,8 @@ main {
   list-style: none;
   display: grid;
   grid-template-columns: 0.05fr 1fr;
+  line-height: 2rem;
+  margin-bottom: 1rem;
 }
 
 @-webkit-keyframes fadeIn {
@@ -468,19 +461,51 @@ main {
   display: flex;
 }
 
-.show {
-  visibility: visible;
-  -webkit-animation: fadeIn 0.5s;
-  animation: fadeIn 0.5s;
-}
-
 /* ----------------EDUCATION SECTION------------------------------------- */
 
+.popuptext-edu {
+  visibility: hidden;
+  width: 62rem;
+  height: 16rem;
+  background-color: var(--bg-primary);
+  color: var(--link-primary);
+  border-radius: 2rem;
+  padding: 2rem 4rem;
+  position: absolute;
+  z-index: 9999;
+  bottom: 28%;
+  left: 46%;
+}
+
+.edu-subhead {
+  font-size: 2.2rem;
+}
+
+.edu-subhead2 {
+  display: flex;
+  padding-top: 0;
+  font-size: 1.5rem;
+  padding-bottom: 1.4rem;
+}
+
+.edu-subhead2 div {
+  margin-left: auto;
+}
+
+.edu-grid {
+  grid-template-columns: 0.76fr 1fr;
+}
 /* ----------------PROJECT SECTION------------------------------------- */
 
 .pro-line {
   margin-top: 10rem;
   font-size: 1.4rem;
+}
+
+/* ---------------- DOWNLOAD SECTION------------------------------------- */
+
+.dow-list {
+  list-style: none;
 }
 
 /* ----------------CONTACT SECTION------------------------------------- */
@@ -497,3 +522,9 @@ main {
 }
 
 /* ---------------- SECTION------------------------------------- */
+
+.show {
+  visibility: visible;
+  -webkit-animation: fadeIn 0.5s;
+  animation: fadeIn 0.5s;
+}
