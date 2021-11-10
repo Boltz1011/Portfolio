@@ -308,7 +308,7 @@ main {
 
 .abo-line {
   font-size: 1.8rem;
-  line-height: 2.5rem;
+  line-height: 3rem;
 }
 
 .abo-subgrid {
@@ -319,6 +319,7 @@ main {
 
 .abo-list {
   list-style: none;
+  line-height: 3.5rem;
 }
 
 .abo-list::before {
